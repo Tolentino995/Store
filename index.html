@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Decoración y Velas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="Logo de la Tienda">
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar productos...">
+                <button type="button">Buscar</button>
+            </div>
+            <div class="header-buttons">
+                <button class="login-button">
+                    <img src="login-icon.png" alt="Iniciar sesión">
+                </button>
+                <button class="cart-button" onclick="toggleCart()">
+                    <div class="shopping-cart-icon"></div>
+                </button>
+            </div>
+        </div>
+        <nav class="product-categories">
+            <ul>
+                <li><a href="#">Velas</a>
+                    <ul class="submenu">
+                        <li><a href="#">Aromáticas</a></li>
+                        <li><a href="#">Decorativas</a></li>
+                        <li><a href="#">Personalizadas</a></li>
+                        <li><a href="#">Temáticas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Decoración Artesanal</a>
+                    <ul class="submenu">
+                        <li><a href="#">Macetas y Jarrones</a></li>
+                        <li><a href="#">Figuras Decorativas</a></li>
+                        <li><a href="#">Portavelas y Candelabros</a></li>
+                        <li><a href="#">Platos y Bandejas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Diseños Modernos</a>
+                    <ul class="submenu">
+                        <li><a href="#">Porta-velas</a></li>
+                        <li><a href="#">Adornos Colgantes</a></li>
+                        <li><a href="#">Organizadores</a></li>
+                        <li><a href="#">Figuras Decorativas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Conjuntos y Kits</a>
+                    <ul class="submenu">
+                        <li><a href="#">Kits de Decoración</a></li>
+                        <li><a href="#">Sets de Regalo</a></li>
+                        <li><a href="#">Colecciones Temáticas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Accesorios Decorativos</a>
+                    <ul class="submenu">
+                        <li><a href="#">Soportes para Incienso</a></li>
+                        <li><a href="#">Posavasos</a></li>
+                        <li><a href="#">Sujetalibros</a></li>
+                        <li><a href="#">Marcos de Fotos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Novedades</a>
+                    <ul class="submenu">
+                        <li><a href="#">Nuevos Productos</a></li>
+                        <li><a href="#">Ediciones Limitadas</a></li>
+                        <li><a href="#">Ofertas Especiales</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Personalizados</a>
+                    <ul class="submenu">
+                        <li><a href="#">Productos a Medida</a></li>
+                        <li><a href="#">Regalos Personalizados</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <!-- Ventana emergente del carrito de compras -->
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+            <h2>Contenido del Carrito</h2>
+            <p>Aquí aparecerá el contenido del carrito.</p>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Bienvenido a Nuestra Tienda</h1>
+        <p>Descubre nuestras colecciones únicas de velas y decoración artesanal.</p>
+        <a href="#productos" class="btn-primary">Explorar Productos</a>
+    </section>
+
+    <section id="velas" class="products-section">
+        <h2>Velas</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="vela-aromaticas.jpg" alt="Velas Aromáticas">
+                <h3>Velas Aromáticas</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="vela-decorativas.jpg" alt="Velas Decorativas">
+                <h3>Velas Decorativas</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="vela-personalizadas.jpg" alt="Velas Personalizadas">
+                <h3>Velas Personalizadas</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="vela-tematicas.jpg" alt="Velas Temáticas">
+                <h3>Velas Temáticas</h3>
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="decoracion-artesanal" class="products-section">
+        <h2>Decoración Artesanal</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="macetas-jarrones.jpg" alt="Macetas y Jarrones">
+                <h3>Macetas y Jarrones</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="figuras-decorativas.jpg" alt="Figuras Decorativas">
+                <h3>Figuras Decorativas</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="portavelas-candelabros.jpg" alt="Portavelas y Candelabros">
+                <h3>Portavelas y Candelabros</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="platos-bandejas.jpg" alt="Platos y Bandejas">
+                <h3>Platos y Bandejas</h3>
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="disenos-modernos" class="products-section">
+        <h2>Diseños Modernos</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="porta-velas.jpg" alt="Porta-velas">
+                <h3>Porta-velas</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="adornos-colgantes.jpg" alt="Adornos Colgantes">
+                <h3>Adornos Colgantes</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="organizadores.jpg" alt="Organizadores">
+                <h3>Organizadores</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="figuras-decorativas.jpg" alt="Figuras Decorativas">
+                <h3>Figuras Decorativas</h3>
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="conjuntos-kits" class="products-section">
+        <h2>Conjuntos y Kits</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="kits-de-decoracion.jpg" alt="Kits de Decoración">
+                <h3>Kits de Decoración</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="sets-de-regalo.jpg" alt="Sets de Regalo">
+                <h3>Sets de Regalo</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="colecciones-tematicas.jpg" alt="Colecciones Temáticas">
+                <h3>Colecciones Temáticas</h3>
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="accesorios-decorativos" class="products-section">
+        <h2>Accesorios Decorativos</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="soportes-para-incienso.jpg" alt="Soportes para Incienso">
+                <h3>Soportes para Incienso</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="posavasos.jpg" alt="Posavasos">
+                <h3>Posavasos</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="sujeta-libros.jpg" alt="Sujeta-libros">
+                <h3>Sujeta-libros</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="marcos-fotos.jpg" alt="Marcos de Fotos">
+                <h3>Marcos de Fotos</h3>
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="novedades" class="products-section">
+        <h2>Novedades</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="nuevos-productos.jpg" alt="Nuevos Productos">
+                <h3>Nuevos Productos</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="ediciones-limitadas.jpg" alt="Ediciones Limitadas">
+                <h3>Ediciones Limitadas</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="ofertas-especiales.jpg" alt="Ofertas Especiales">
+                <h3>Ofertas Especiales</h3>
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="personalizados" class="products-section">
+        <h2>Personalizados</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="productos-a-medida.jpg" alt="Productos a Medida">
+                <h3>Productos a Medida</h3>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="product-item">
+                <img src="regalos-personalizados.jpg" alt="Regalos Personalizados">
+                <h3>Regalos Personalizados</h3>
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Suscríbete a Nuestro Boletín</h2>
+        <form action="#">
+            <input type="email" placeholder="Tu correo electrónico">
+            <button type="submit">Suscribirse</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2024 Tienda de Decoración y Velas. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#velas">Velas</a>
+            <a href="#decoracion-artesanal">Decoración Artesanal</a>
+            <a href="#disenos-modernos">Diseños Modernos</a>
+            <a href="#conjuntos-kits">Conjuntos y Kits</a>
+            <a href="#accesorios-decorativos">Accesorios Decorativos</a>
+            <a href="#novedades">Novedades</a>
+            <a href="#personalizados">Personalizados</a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

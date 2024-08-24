@@ -1,0 +1,421 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente base */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #FAF9F6; /* Blanco Roto */
+}
+/* Header */
+/* Submenú oculto por defecto */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Alinea el submenú justo debajo del índice principal */
+    left: 0;   /* Alinea el submenú con el borde izquierdo del índice principal */
+    background-color: #FAF9F6;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+    padding: 10px 0;
+}
+
+.header-content {
+    background-color: #FAF9F6;
+    padding: 10px 20px;
+    border-bottom: 1px solid #D3D3D3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content .logo img {
+    max-height: 50px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+    background-color: #FAF9F6;
+    margin-right: 10px; /* Espacio entre la búsqueda y los botones */
+}
+
+.search-container input[type="text"] {
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.search-container button {
+    background-color: #FF7F50;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-container button:hover {
+    background-color: #FF6347;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header-buttons button {
+    background: none;
+    border: none;
+    margin-left: 10px; /* Espacio entre el botón de búsqueda y los botones de usuario y carrito */
+    cursor: pointer;
+}
+
+.header-buttons img {
+    height: 30px;
+}
+
+.cart-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px; /* Tamaño ajustado al margen derecho */
+    height: 100%;
+    background-color: #FAF9F6;
+    border-left: 1px solid #D3D3D3;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto; /* Hacer scroll si el contenido es largo */
+}
+
+.cart-popup-content {
+    padding: 20px;
+    position: relative;
+}
+
+.cart-popup-content .close-btn {
+    font-size: 24px;
+    color: #FF7F50;
+    background: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+/* Estilo para el contenedor de los índices de productos */
+.product-categories {
+    background-color: #D3D3D3;
+    padding: 10px 20px;
+    border-top: 1px solid #BEBEBE;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de la lista principal */
+.product-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+/* Estilo para los elementos de la lista */
+.product-categories li {
+    position: relative;
+    margin: 0 20px;
+}
+
+/* Estilo para los enlaces del menú */
+.product-categories a {
+    text-decoration: none;
+    color: #FF7F50;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+/* Cambio de color al pasar el ratón sobre el enlace del menú */
+.product-categories a:hover {
+    background-color: #FF7F50;
+    color: #FAF9F6;
+}
+
+/* Submenú oculto por defecto */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Alinea el submenú justo debajo del índice principal */
+    left: 0;   /* Alinea el submenú con el borde izquierdo del índice principal */
+    background-color: #FAF9F6;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna dentro del submenú */
+    visibility: hidden; /* Oculta el submenú */
+}
+
+/* Mostrar submenú al pasar el ratón sobre el índice principal */
+.product-categories li:hover .submenu {
+    display: flex; /* Muestra el submenú en forma de columna */
+    visibility: visible; /* Asegura que el submenú sea visible al pasar el ratón */
+}
+
+/* Estilo para los elementos del submenú */
+.submenu li {
+    margin: 0;
+}
+
+/* Estilo para los enlaces del submenú */
+.submenu a {
+    padding: 10px 15px;
+    color: #FF7F50;
+    font-size: 14px;
+    display: block;
+    border-bottom: 1px solid #D3D3D3;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cambio de color al pasar el ratón sobre el enlace del submenú */
+.submenu a:hover {
+    background-color: #FF7F50;
+    color: #FAF9F6;
+}
+
+/* Último elemento del submenú sin borde inferior */
+.submenu li:last-child a {
+    border-bottom: none;
+}
+
+/*--------------------------------------------------Carrito----------------------------------------------------*/
+.shopping-cart-icon {
+    width: 100px; /* Ajusta el tamaño del carrito */
+    height: 60px; /* Ajusta el tamaño del carrito */
+    position: relative;
+    background-color: #D3D3D3; /* Color del cuerpo del carrito */
+    border: 2px solid #000; /* Color y grosor de las líneas del carrito */
+    border-radius: 5px;
+    clip-path: polygon(0% 40%, 10% 40%, 15% 0%, 85% 0%, 90% 40%, 100% 40%, 100% 100%, 0% 100%); /* Forma de trapecio */
+}
+
+.shopping-cart-icon::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Posiciona el mango */
+    left: 0;
+    width: 40px;
+    height: 10px;
+    background-color: #D3D3D3;
+    border: 2px solid #000;
+    border-radius: 5px;
+    z-index: 1; /* Asegura que el mango esté encima del carrito */
+}
+
+.shopping-cart-icon::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px; /* Posiciona las ruedas */
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.shopping-cart-icon::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 10px; /* Posiciona las ruedas */
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+/* Rejas internas */
+.reja {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    border: 2px solid #000;
+    border-radius: 3px;
+}
+
+.reja::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border: 2px solid #000;
+    box-sizing: border-box;
+}
+
+
+
+/* Hero */
+.hero {
+    background-color: #FF7F50; /* Coral */
+    color: #FAF9F6; /* Blanco Roto */
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero .btn-primary {
+    background-color: #98FF98; /* Verde Menta */
+    color: #333;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sección de Productos */
+.products-section {
+    padding: 2rem 1rem;
+    background-color: #D3D3D3; /* Gris Suave */
+}
+
+.products-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.product-item {
+    background-color: #FAF9F6; /* Blanco Roto */
+    border: 1px solid #DEB887; /* Madera Clara */
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #DEB887; /* Madera Clara */
+    margin-bottom: 0.5rem;
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-item a {
+    color: #FF7F50; /* Coral */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.product-item a:hover {
+    text-decoration: underline;
+}
+
+/* Newsletter */
+.newsletter {
+    background-color: #DEB887; /* Madera Clara */
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.newsletter h2 {
+    margin-bottom: 1rem;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.newsletter input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #D3D3D3; /* Gris Suave */
+    font-size: 1rem;
+    width: 250px;
+}
+
+.newsletter button {
+    background-color: #98FF98; /* Verde Menta */
+    border: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #87E7A1; /* Verde Menta más suave */
+}
+
+/* Footer */
+footer {
+    background-color: #DEB887; /* Madera Clara */
+    color: #FAF9F6; /* Blanco Roto */
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid #D3D3D3; /* Gris Suave */
+}
+
+.footer-info p {
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #FAF9F6; /* Blanco Roto */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
